@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Lab1</string>
-    <string name="hello_message">Bonjour!</string>
+    <string name="app_name">实验1</string>
+    <string name="hello_message">你好!</string>
+    <string name="login_message">用户名</string>
+    <string name="password_message">密码</string>
+    <string name="dialog_message">你确认想退出?</string>
+    <string name="dialog_title">注意!</string>
+    <string name="ButtonText">我是按键</string>
 </resources>

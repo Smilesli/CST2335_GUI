@@ -6,4 +6,6 @@
     <string name="dialog_message">Do you want to finish this activity?</string>
     <string name="dialog_title">Warning!</string>
     <string name="ButtonText">I\'m a button</string>
+    <string name="ButtonStartChat">Start Chat</string>
+    <string name="Buttonsend">Send</string>
 </resources>

@@ -7,4 +7,7 @@
     <string name="dialog_message">你确认想退出?</string>
     <string name="dialog_title">注意!</string>
     <string name="ButtonText">我是按键</string>
+    <string name="ButtonStartChat">开始聊天</string>
+    <string name="ButtonSend">发送</string>
+    <string name="messagEditText"></string>
 </resources>

@@ -17,6 +17,6 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textSize="25dp"
-        android:layout_gravity="left">
+        android:gravity="left">
     </TextView>
 </LinearLayout>

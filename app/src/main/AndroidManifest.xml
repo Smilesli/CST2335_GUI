@@ -5,13 +5,15 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Lab5"
+        android:label="Lab6"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity android:name=".StartActivity">
             <intent-filter>
@@ -37,6 +39,13 @@
         <activity android:name=".ChatWindowActivity">
             <intent-filter>
                 <action android:name="com.example.yueli.androidlabs.ChatWindowActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".WeatherForecastActivity">
+            <intent-filter>
+                <action android:name="com.example.yueli.androidlabs.WeatherForecastActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

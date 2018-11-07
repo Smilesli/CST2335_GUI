@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class StartActivity extends Activity {
-    Button b1,b2;
+    Button b1,b2,b3;
     private static final String TAG = "StartActivity";
     int request_Code = 50;
 
@@ -21,6 +21,7 @@ public class StartActivity extends Activity {
 
         b1 = findViewById(R.id.button);
         b2 = findViewById(R.id.button2);
+        b3 = findViewById(R.id.button3);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,10 +41,20 @@ public class StartActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG,"User clicked Weather");
+
+                Intent intent = new Intent(StartActivity.this, WeatherForecastActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(requestCode == 50){
+        if(requestCode == request_Code){
             if(resultCode == RESULT_OK){
                 Log.i(TAG,"Returned to StartActivityResult");
 

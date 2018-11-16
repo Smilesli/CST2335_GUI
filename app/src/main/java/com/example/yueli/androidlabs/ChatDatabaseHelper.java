@@ -1,6 +1,7 @@
 package com.example.yueli.androidlabs;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -34,5 +35,22 @@ public class ChatDatabaseHelper extends SQLiteOpenHelper {
         Log.i(TAG, "Calling onUpgrade, oldVersion=" + oldVersion + " newVersion=" + newVersion);
         db.execSQL("DROP TABLE IF EXISTS " + TABLENAME);
         onCreate(db);
+    }
+
+
+
+    public void getMessage(SQLiteDatabase db) {
+        Cursor res = db.rawQuery("select * from " + TABLENAME, null);
+    }
+
+    public static int getIdFromCursor(Cursor cursor){
+        int id = cursor.getInt(cursor.getColumnIndex(KEY_ID));
+        return id;
+    }
+
+    public static boolean delete(long id, SQLiteDatabase db){
+
+        Log.i(TAG, "Calling delete");
+        return db.delete(TABLENAME, KEY_ID + "=" + id, null) > 0;
     }
 }

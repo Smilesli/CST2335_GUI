@@ -1,6 +1,7 @@
 package com.example.yueli.androidlabs;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -10,7 +11,7 @@ public class ChatDatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "Messages.db";
     private static int VERSION_NUM = 6;
     static final String TABLENAME = "chartrecord";
-    static final String KEY_MESSAGE = "MESSAGE ";
+    static final String KEY_MESSAGE = "MESSAGE";
     static final String KEY_ID = "_id";
     private static final String DATABASE_CREATE = "create table " + TABLENAME + "( " + KEY_ID + " integer primary key autoincrement, " + KEY_MESSAGE + " text not null);";
 
@@ -24,8 +25,6 @@ public class ChatDatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db){
         db.execSQL(DATABASE_CREATE);
         Log.i(TAG, "Calling onCreate");
-
-
     }
 
     @Override
@@ -34,5 +33,24 @@ public class ChatDatabaseHelper extends SQLiteOpenHelper {
         Log.i(TAG, "Calling onUpgrade, oldVersion=" + oldVersion + " newVersion=" + newVersion);
         db.execSQL("DROP TABLE IF EXISTS " + TABLENAME);
         onCreate(db);
+    }
+
+
+
+    public void getMessage(SQLiteDatabase db) {
+        Cursor res = db.rawQuery("select * from " + TABLENAME, null);
+    }
+
+    public static int getIdFromCursor(Cursor cursor){
+        int id = cursor.getInt(cursor.getColumnIndex(KEY_ID));
+        return id;
+    }
+
+    public static boolean delete(long id, SQLiteDatabase db){
+        int tmp = 0;
+
+        Log.i(TAG, "Calling delete");
+        tmp = db.delete(TABLENAME, KEY_ID + "=" + id, null);
+        return (tmp > 0);
     }
 }

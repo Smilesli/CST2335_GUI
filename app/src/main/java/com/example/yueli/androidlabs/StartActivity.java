@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class StartActivity extends Activity {
-    Button b1,b2,b3;
+    Button b1,b2,b3,b4;
     private static final String TAG = "StartActivity";
     int request_Code = 50;
 
@@ -22,6 +22,7 @@ public class StartActivity extends Activity {
         b1 = findViewById(R.id.button);
         b2 = findViewById(R.id.button2);
         b3 = findViewById(R.id.button3);
+        b4 = findViewById(R.id.button4);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +49,16 @@ public class StartActivity extends Activity {
                 Log.i(TAG,"User clicked Weather");
 
                 Intent intent = new Intent(StartActivity.this, WeatherForecastActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG,"User clicked toolbar test");
+
+                Intent intent = new Intent(StartActivity.this, TestToolbar.class);
                 startActivity(intent);
             }
         });

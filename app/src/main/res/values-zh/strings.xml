@@ -10,4 +10,5 @@
     <string name="ButtonStartChat">开始聊天</string>
     <string name="ButtonWeather">天气</string>
     <string name="Buttonsend">发送</string>
+    <string name="ButtonToolbar">测试工具条</string>
 </resources>

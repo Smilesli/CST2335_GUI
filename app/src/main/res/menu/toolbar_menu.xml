@@ -22,7 +22,7 @@
             android:id="@+id/action_three"
             android:title="Three"
             android:icon="@drawable/icon_3"
-            android:orderInCategory="3"
+            android:orderInCategory="103"
             app:showAsAction="ifRoom">
 
     </item>

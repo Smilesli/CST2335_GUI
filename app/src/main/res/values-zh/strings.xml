@@ -14,4 +14,7 @@
     <string name="about">关于</string>
     <string name="aboutinfo">版本 1.0, 作者：朱月丽</string>
     <string name="ButtonInToolbarTest">按键</string>
+    <string name="dialog_title_toolbar">你确认想返回上一屏?</string>
+    <string name="cancel">取消</string>
+    <string name="ok">确认</string>
 </resources>

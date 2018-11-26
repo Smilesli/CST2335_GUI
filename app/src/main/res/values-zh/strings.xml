@@ -11,4 +11,7 @@
     <string name="ButtonWeather">天气</string>
     <string name="Buttonsend">发送</string>
     <string name="ButtonToolbar">测试工具条</string>
+    <string name="about">关于</string>
+    <string name="aboutinfo">版本 1.0, 作者：朱月丽</string>
+    <string name="ButtonInToolbarTest">按键</string>
 </resources>

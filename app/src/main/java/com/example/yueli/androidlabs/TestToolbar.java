@@ -16,9 +16,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class TestToolbar extends AppCompatActivity {
+public class TestToolbar extends AppCompatActivity implements ExampleDialog.ExampleDialogListener {
 
     private static final String TAG = "TestToolbar";
+    String currentMessage = "You selected item 1";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +42,6 @@ public class TestToolbar extends AppCompatActivity {
         switch(item.getItemId()){
             case R.id.action_one:
             {
-                String currentMessage = "You selected item 1";
                 Snackbar.make(findViewById(R.id.action_one),currentMessage,Snackbar.LENGTH_SHORT).show();
                 //Log.i(TAG, "iteam one is selected");
             }
@@ -73,8 +73,10 @@ public class TestToolbar extends AppCompatActivity {
                 break;
             case R.id.action_three:
             {
-            }
                 Log.i(TAG, "iteam three is selected");
+                openDialog();
+
+            }
                 break;
             case R.id.action_4:
                 Toast.makeText(getApplicationContext(),R.string.aboutinfo, Toast.LENGTH_SHORT).show();
@@ -83,8 +85,19 @@ public class TestToolbar extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void openDialog(){
+        ExampleDialog exampleDialog = new ExampleDialog();
+        exampleDialog.show(getSupportFragmentManager(),"example diaglog");
+    }
+
+
 
     public void onButtonClick(View view){
         Snackbar.make((Button)findViewById(R.id.button5),"Message to show",Snackbar.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void applyTexts(String message) {
+        currentMessage = message;
     }
 }
